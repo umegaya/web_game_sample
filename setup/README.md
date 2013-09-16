@@ -10,24 +10,24 @@
  vagrant sandbox on
  cp nodes/db.json nodes/provision_test.json
  bin/knife solo cook provision_test
-  (set up as db node) 
+  (DBサーバーがセットアップされる) 
    vagrant ssh 
-   mysql -u root -ptest => access mysql prompt
+   mysql -u root -ptest => MySQLのプロンプトが表示
 
  vagrant sandbox rollback
-  (now db server gone)
-   try same commands as above => cannot access mysql prompt
+  (インストールの取り消し)
+   mysql -u root -ptest => MySQLが見つからないと言われる 
 
  cp nodes/web.json nodes/provision_test.json
  bin/knife solo cook provision_test
-  (set up as web node)
-   vagrant ssh and stop iptables
-   try to access localhost:8080/manager with browser  => access tomcat manager's login dialog
-   (but we don't setup tomcat user yet for security reason)
+  (webサーバーがセットアップされる apache2 and tomcat)
+   vagrant ssh
+   sudo /sbin/service iptables stop => iptableを止めておく
+   localhost:8080/managerにブラウザでアクセス => tomcatのmanager画面が表示される(がtomcat userがいないのでログイン不可)
  
  vagrant sandbox rollback
-  (now web server gone)
-   try to access same url as above => cannot access tomcat manager's login dialog 
+  (インストールの取り消し)
+   localhost:8080/managerにブラウザでアクセス => タイムアウト
 
  vagrant sandbox off
 ```
