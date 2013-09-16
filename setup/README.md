@@ -2,6 +2,7 @@
 ```
  please install vagrant sahara : with http://www.ryuzee.com/contents/blog/6555
  
+ bundle install --path=vendor/bundle --binstubs=bin
  bundle exec berks --path=cookbooks
  vagrant up
  vagrant ssh-config --host=provision_test >> ~/.ssh/config
