@@ -1,0 +1,19 @@
+{
+ "name" : "db",
+ "default_attributes" : {
+  "mysql" : {
+   "server_debian_password" : "test",
+   "server_root_password" : "test",
+   "server_repl_password" : "test",
+   "bind_address" : "localhost"
+  }
+ },
+ "override_attributes" : {},
+ "json_class": "Chef::Role",
+ "description": "",
+ "chef_type": "role",
+ "run_list": [
+  "recipe[yum::remi]",
+  "recipe[mysql::server]"
+ ]
+}

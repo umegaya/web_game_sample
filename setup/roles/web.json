@@ -1,0 +1,24 @@
+{
+ "name" : "web",
+ "default_attributes" : {
+  "tomcat" : {
+   "base_version" : 7
+  },
+  "java" : {
+   "jdk_version" : 7
+  }
+ },
+ "override_attributes" : {},
+ "json_class": "Chef::Role",
+ "description": "",
+ "chef_type": "role",
+ "run_list": [
+  "recipe[yum::epel]",
+  "recipe[yum_jpackage]",
+  "recipe[apache2]",
+  "recipe[tomcat]",
+  "recipe[java]",
+  "recipe[apache_proxy_ajp]"
+ ]
+}
+

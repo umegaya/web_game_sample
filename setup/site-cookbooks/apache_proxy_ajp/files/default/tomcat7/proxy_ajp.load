@@ -1,0 +1,1 @@
+LoadModule proxy_ajp_module /usr/lib64/httpd/modules/mod_proxy_ajp.so

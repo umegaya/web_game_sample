@@ -1,0 +1,7 @@
+site :opscode
+
+cookbook 'mysql'
+cookbook 'apache2'
+cookbook 'tomcat'
+cookbook 'yum'
+
