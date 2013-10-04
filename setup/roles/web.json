@@ -15,10 +15,9 @@
  "run_list": [
   "recipe[yum::epel]",
   "recipe[yum_jpackage]",
-  "recipe[apache2]",
-  "recipe[tomcat]",
   "recipe[java]",
-  "recipe[apache_proxy_ajp]"
+  "recipe[simple_iptables]",
+  "recipe[play]"
  ]
 }
 
